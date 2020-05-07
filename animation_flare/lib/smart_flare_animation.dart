@@ -1,4 +1,5 @@
 import 'package:flare_flutter/flare_actor.dart';
+import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart';
 
 enum AnimationToPlay {
@@ -16,6 +17,9 @@ class SmartFlareAnimation extends StatefulWidget {
 
 class _SmartFlareAnimationState extends State<SmartFlareAnimation> {
   AnimationToPlay _animationToPlay = AnimationToPlay.Deactive;
+  AnimationToPlay _lastPlayedAnimation;
+
+  final FlareControls animationControls = FlareControls();
 
   static const double AnimationWidth = 295.0;
   static const double AnimationHeight = 251.0;
@@ -59,6 +63,7 @@ class _SmartFlareAnimationState extends State<SmartFlareAnimation> {
         child: FlareActor(
           'assets/button-animation.flr',
           animation: _getAnimationName(_animationToPlay),
+          controller: animationControls,
         ),
       ),
     );
@@ -75,9 +80,14 @@ class _SmartFlareAnimationState extends State<SmartFlareAnimation> {
     }
   }
 
-  void _setAnimationToPlay(AnimationToPlay animation){
-    setState(() {
-      _animationToPlay = animation;
-    });
+  void _setAnimationToPlay(AnimationToPlay animation) {
+    var isTappedAnimation = _getAnimationName(animation).contains('_tapped');
+    
+    if (isTappedAnimation && _lastPlayedAnimation == AnimationToPlay.Deactive) {
+          return;
+        }
+
+    animationControls.play(_getAnimationName(animation));
+    _lastPlayedAnimation = animation;
   }
 }

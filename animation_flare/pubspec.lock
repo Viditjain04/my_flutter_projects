@@ -77,7 +77,7 @@ packages:
       name: flare_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.3"
+    version: "1.8.3"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -142,6 +142,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smart_flare:
+    dependency: "direct main"
+    description:
+      name: smart_flare
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   source_span:
     dependency: transitive
     description:
