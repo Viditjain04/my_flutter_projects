@@ -10,26 +10,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Login Screen',
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: kBackgroudColor,
         textTheme: TextTheme(
           display1: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
           button: TextStyle(
             color: kPrimaryColor,
           ),
           headline: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.normal,
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.white.withOpacity(.15),
+              color: Colors.black.withOpacity(.15),
             ),
           ),
         ),
@@ -87,13 +87,13 @@ class WelcomeScreen extends StatelessWidget {
                       );
                     },
                     child: Container(
-                      margin: EdgeInsets.only(top: 25.0),
+                      margin: EdgeInsets.only(top: 26.0),
                       padding: EdgeInsets.symmetric(
-                        horizontal: 26.0,
-                        vertical: 16,
+                        horizontal: 27.0,
+                        vertical: 15,
                       ),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
+                        borderRadius: BorderRadius.circular(24.0),
                         color: kPrimaryColor,
                       ),
                       child: Row(
@@ -103,10 +103,10 @@ class WelcomeScreen extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .button
-                                .copyWith(color: Colors.black),
+                                .copyWith(color: Colors.white[600]),
                           ),
                           Icon(
-                            Icons.arrow_forward,
+                            Icons.arrow_forward_ios,
                             color: Colors.black,
                           ),
                         ],
